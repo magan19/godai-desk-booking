@@ -543,7 +543,67 @@
               </div>
             </div>
           </div>
-        </section>        
+        </section>
+        
+        <hr class="divider-w">
+
+        <section class="module pt-100" id="pruebalo-gratis">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-6 col-sm-offset-3">
+                <h2 class="module-title font-alt">RESERVA TU ESPACIO</h2>
+                <div class="module-subtitle font-serif"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6 col-sm-offset-3">
+                <div class="alert alert-success hidden" id="contactSuccess" role="alert">
+                  <strong>¡Muchas gracias por tu interés!</strong> En breve nos pondremos en contacto contigo.
+                </div>
+                <div class="alert alert-danger hidden" id="contactError" role="alert">
+                  <strong>Lo sentimos, hubo un error al enviar tu mensaje.</strong> Inténtalo de nuevo más tarde o envíanos un email a <a href="mailto:info@espaciogodai.com">info@espaciogodai.com</a>.
+                </div>
+
+                <form id="reservaForm" role="form" method="post" action="#">
+                  <div class="form-group">
+                    <label class="sr-only" for="rnombre">Nombre</label>
+                    <input class="form-control" type="text" id="rnombre" name="nombre" placeholder="Nombre" />
+                  </div>
+
+                  <div class="form-group">
+                    <label class="sr-only" for="rapellidos">Apellidos</label>
+                    <input class="form-control" type="text" id="rapellidos" name="apellidos" placeholder="Apellidos" />
+                    
+                  </div>
+                  <div class="form-group">
+                    <label class="sr-only" for="remail">Email</label>
+                    <input class="form-control" type="email" id="remail" name="email" placeholder="Email" />
+                    
+                  </div>
+                  <div class="form-group">
+                    <label class="sr-only" for="rtelefono">Telefono</label>
+                    <input class="form-control" type="tel" id="rtelefono" name="telefono" placeholder="Telefono" minlength="8" maxlength="8" />
+                    
+                  </div>
+                  <div class="form-group">
+                    <label class="sr-only" for="rdni">DNI</label>
+                    <input class="form-control" type="text" id="rdni" name="dni" placeholder="DNI" minlength="8" maxlength="8" />
+                    
+                  </div>
+                  <div class="form-group">
+                    <label class="sr-only" for="rfecha">Fecha</label>
+                    <input class="form-control" type="date" id="rfecha" name="fecha" placeholder="Fecha" />
+                    
+                  </div>
+                  <div class="text-center">
+                    <button class="btn btn-block btn-round btn-d" id="rcfsubmit" type="submit">ENVIAR</button>
+                  </div>
+                </form>
+                <div class="ajax-response font-alt" id="contactFormResponse"></div>
+              </div>
+            </div>
+          </div>
+        </section> 
 
         <div class="module-small bg-dark">
           <div class="container">

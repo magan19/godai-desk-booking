@@ -252,10 +252,56 @@ $('#contactForm').on('submit',function(e){
             }
         })
     });
-  
 
+
+$('#reservaForm').on('submit',function(e){
+    e.preventDefault();
+    if ($("rfecha") <= Date()){
+        alert('Fecha introducida incorrecta');
+        return;
+    }
+},
+
+    
+$('#reservaForm').on('submit',function(e){
+        e.preventDefault();
+        if ($("#reservaForm").serialize() === 'rnombre=&rapellidos=&email=&telefono=&DNI=&fecha=') {
+             alert('Por favor, rellena los campos para enviar tu solicitud');
+            return;
+    
+         }
+        $.ajax({
+            url: "https://ncxwpqgg2avzymf5v4bdnu7yfi0eyivd.lambda-url.eu-west-1.on.aws/",
+            method: "POST",
+            crossDomain: true,
+            dataType: "json",
+            data: $("#reservaForm").serialize(),
+            success: function(response) {
+
+                if(response.result == "success") {
+                    $('#reservaForm')[0].reset();
+                    $('#reservaSuccess').removeClass('hidden');
+                    $('#reservaError').addClass('hidden');
+                    $('#cfsubmit').text('Gracias');
+
+                    return true;
+                }
+                else {
+                    $('#reservaError').removeClass('hidden');
+                    $('#reservaSuccess').addClass('hidden');
+                    $('#cfsubmit').text('Gracias');
+                }
+            },
+            error: function(e) {                
+                $('#reservaError').removeClass('hidden');
+                $('#reservaSuccess').addClass('hidden');
+                $('#cfsubmit').text('Gracias');
+            }
+        })
     });
+
+
 })(jQuery);
 
 
-
+})
